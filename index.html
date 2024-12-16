@@ -1,0 +1,88 @@
+
+// src/main/webapp/index.html
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplicație Web Interactivă</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #3494E6, #EC6EAD);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .container {
+            background: rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+        button {
+            background-color: #ffffff;
+            color: #EC6EAD;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Aplicație Web Modernă</h1>
+    <p>Server Java cu Tomcat și interfață dinamică</p>
+    <button onclick="window.location.href='/dynamic'">
+        Generează Conținut Dinamic
+    </button>
+</div>
+
+<script>
+    // Script simplu pentru interactivitate
+    console.log('Aplicație Web încărcată cu succes!');
+</script>
+</body>
+</html>
+
+// pom.xml (pentru dependențe Maven)
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ro.exemplu</groupId>
+    <artifactId>web-aplicatie</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>9.0.55</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
